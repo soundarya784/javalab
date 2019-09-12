@@ -1,0 +1,32 @@
+import java.util.*;
+class Student
+{
+	
+	public static void main(String args[])
+	{
+		int credits[]=new int[10];
+		int marks[]=new int[10];
+		int tm=0,tc=0;
+		int grade=0;
+		System.out.println("enter the credits");
+		Scanner obj=new Scanner(System.in);
+		for(int i=0;i<=3;i++)
+		{
+			credits[i]=obj.nextInt();
+			marks[i]=obj.nextInt();
+			tc+=credits[i];
+			if(marks[i]>=75)
+				grade=10;
+			else if(marks[i]>=60)
+				grade=9;
+			else if(marks[i]>=50)
+				grade=8;
+			else if(marks[i]>=35)
+				grade=8;
+			tm+=credits[i]*grade;	
+		}
+		
+		double cgpa=tm/tc;
+		System.out.println("cgpa is:"+cgpa);
+	}
+}
