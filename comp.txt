@@ -1,0 +1,43 @@
+class Current_acc
+{
+	void deposit(int balance)
+	{
+		int amount;
+		this.balance=balance;
+		System.out.println("enter the amount to be deposited\n");
+		Scanner sc=new Scanner(System.in);
+		amount=sc.nextInt();
+		balance+=amount;
+		System.out.println("amount deposited\n\n");
+	}
+	void min_balance(int balance)
+	{
+		int balance;
+		this.balance=balance;
+		static final int min_bal=3000;
+		if(balance<=min_bal)
+		{
+			System.out.println("\nbalance is less than minimum balance"+min_bal);
+			System.out.println("\n\nservice charge:250,imposed");
+			System.out.println("\n\ncurrent balance is: "+balance);}
+		else
+		{
+			System.out.println("current balance is: "+balance);
+		}
+	}
+}
+class savings_acc
+{
+	void compound(int balance);
+	{
+		int balance;
+		this.balance=balance;
+		//static final int r=2;
+		static final int n=12;
+		int i=(1+r)
+		int val=(i*i)-1
+		int comp_intr=balance*val;
+		System.out.println("compound interest is: "+comp_intr);
+	}
+		
+		 	
