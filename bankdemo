@@ -1,0 +1,108 @@
+import java.util.*;
+class Current_acc extends Account
+{
+	
+	void min_balance()
+	{
+		//int balance;
+		//this.balance=balance;
+		final int min_bal=3000;
+		if(balance<=min_bal)
+		{
+			System.out.println("\nbalance is less than minimum balance"+min_bal);
+			System.out.println("\n\nservice charge:250,imposed");
+			balance=(0.5*balance);
+			System.out.println("\n\ncurrent balance is: "+balance);
+		}
+		else
+		{
+			System.out.println("current balance is: "+balance);
+		}
+	}
+}
+class savings_acc extends Account
+{
+	
+	void compound();
+	{
+		//int balance;
+		//this.balance=balance;
+		//static final int r=2;
+		 final int n=12;
+		int i=(1+n);
+		int val=(i*i)-1;
+		int comp_intr=balance*val;
+		System.out.println("compound interest is: "+comp_intr);
+	}
+	void withdraw();
+	{
+		int amt;
+		System.out.println("enter the amount you want to withdraw");
+		Scanner sc=new Scanner(System.in);
+		balance-=amount;
+		System.out.println("amount withdrawn:  "+amt+"\nbalance:"+balance);
+		
+	}
+}
+class Account
+{
+	String name;
+	String acc_no;
+	String type;
+	int balance=0;
+	void deposit()
+	{
+		int amount;
+		//this.balance=balance;
+		System.out.println("enter the amount to be deposited\n");
+		Scanner sc=new Scanner(System.in);
+		amount=sc.nextInt();
+		balance+=amount;
+		System.out.println("amount deposited\n\n");
+	}
+}
+class Bankdemo
+{
+	public static void main(String args[])
+	{	
+		Scanner sc=new Scanner(System.in);
+		
+		int ch,ich;
+		System.out.println("enter 1 for current account:\n\n\neter 2 for savings account");
+		if(ch==1)
+		{
+			savings_acc s=new savings_acc();
+			System.out.println("enter name and account number \n");
+			s.name=sc.next();
+			s.acc_no=sc.next();
+			s.deposit();
+			system.out.println("enter 1 to withdraw\n enter 2 to calculate compound interest");
+			ich=sc.next();
+			switch(ich)
+			{
+				case 1:s.withdraw();
+
+				case 2:s.compound();
+			}
+		}
+		else if(ch==2)
+		{	
+			Current_acc c=new Current_acc();
+			System.out.println("enter name and account number \n");
+			c.name=sc.next();
+			c.acc_no=sc.next();
+			system.out.println("enter 1 to deposit\n enter 2 to check balance");
+			ich=sc.next();
+			switch(ich)
+			{
+				case 1:c.deposit();
+
+				case 2:c.min_balance();
+			}
+		}
+}
+}
+					
+			
+			
+			
